@@ -9,6 +9,7 @@ def main(script) {
     // Object initialization
     factory = new Factory()
 	prebuildStage = new prebuild()
+	build = new build()
 
     // Pipeline object
     pipeline = factory.createPipeline()
@@ -27,6 +28,7 @@ def main(script) {
 
 		stage('Build & Push Image to Registry') {
 			println "Baking image"
+			build.bakeImage(pipeline)
 		}
 
 		stage('Merge') {

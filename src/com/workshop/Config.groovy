@@ -5,7 +5,7 @@ class Config {
     // Place Default Variable Here
     // Docker related default variable
    def default_docker_jenkins_tool = 'docker'
-   def default_docker_registry = "https://registry-1.docker.io/v2/"
+   def default_docker_registry = "https://hub.docker.com"
    def default_docker_registry_jenkins_credential = "docker-credentials"
  
    // Golang related default variable
