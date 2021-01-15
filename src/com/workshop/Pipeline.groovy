@@ -21,10 +21,10 @@ class Pipeline {
     }
     
     def printDetails() {
-	println "Repository Name:" + repositoryName
-	println "Branch Name:" + branchName
-	println "Git Username:" + gitUsername
-	println "Docker Username:" + dockerUsername
-	println "Pull Request Number:" + pullRequestNumber
+	println("Repository Name: ${this.repositoryName}")
+	println("Branch Name: ${this.branchName}")
+	println("Git Username: ${this.gitUsername}")
+	println("Docker Username: ${this.dockerUsername}")
+	println("Pull Request Number: ${this.pullRequestNumber}")
     }
 }
