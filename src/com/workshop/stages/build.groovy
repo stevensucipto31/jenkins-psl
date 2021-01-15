@@ -9,7 +9,7 @@ def bakeImage(Pipeline pipeline) {
 
     docker.withTool("${config.default_docker_jenkins_tool}") {
        docker.withRegistry("${config.default_docker_registry}", "${config.default_docker_registry_jenkins_credential}") {
-           def image = docker.build("${pipeline.docker_user}/${pipeline.repository_name}:build-$BUILD_NUMBER")
+           def image = docker.build("${pipeline.docker_username}/${pipeline.repository_name}:build-$BUILD_NUMBER")
            image.push()
            image.push('latest')
        }
