@@ -14,6 +14,7 @@ def main(script) {
     ansiColor('xterm') {
         stage('Pre Build Details') {
             println "Details Here..."
+	    pipeline.printDetails()
         }
 
 	stage('Checkout & Test') {

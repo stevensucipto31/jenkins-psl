@@ -19,4 +19,12 @@ class Pipeline {
 	this.appPort = appPort
 	this.pullRequestNumber = pullRequestNumber
     }
+    
+    def printDetails() {
+    	println "Repository Name:" + repositoryName
+	println "Branch Name:" + branchName
+	println "Git Username:" + gitUsername
+	println "Docker Username:" + dockerUsername
+	println "Pull Request Number:" + pullRequestNumber
+    }
 }
