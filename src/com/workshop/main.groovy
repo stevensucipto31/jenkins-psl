@@ -40,7 +40,7 @@ def main(script) {
 
 		stage('Deploy') {
 			println "Deliver to the world"
-			deployment.deployToLocalMachine(pipeline)
+			deployment.deploy(pipeline)
 		}
     }
 }
