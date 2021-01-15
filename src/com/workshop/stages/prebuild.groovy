@@ -6,11 +6,29 @@ import com.workshop.Config
 import com.workshop.Pipeline
 
 def details(Pipeline p) {
-   println("================\u001b[44mDetails Of Jobs\u001b[0m===============")
-   println("\u001b[36mRepository Name : \u001b[0m${p.repository_name}")
-   println("\u001b[36mBranch Name : \u001b[0m${p.branch_name}")
-   println("\u001b[36mApplication Port : \u001b[0m${p.app_port}")
+   println("Repository Name : ${p.repository_name}")
+   println("Branch Name : ${p.branch_name}")
+   println("Application Port : ${p.app_port}")
    println("")
-   println("\u001b[36mTesting this PR : \u001b[0m#${p.pr_num} - https://github.com/${p.git_username}/${p.repository_name}/pull/${p.pr_num}")
-   println("\u001b[36mMerging to branch : \u001b[0m${p.branch_name}")
+   println("Testing this PR : #${p.pr_num} - https://github.com/${p.git_username}/${p.repository_name}/pull/${p.pr_num}")
+   println("Merging to branch : ${p.branch_name}")
+}
+
+def validation(Pipeline p) {
+   if(!p.repository_name) {
+       "Repository name can't be empty"
+       error("ERROR101 - MISSING REPOSITORY_NAME")
+   }
+   if(!p.branch_name) {
+       "Branch name can't be empty"
+       error("ERROR101 - MISSING BRANCH_NAME")
+   }
+   if(!p.app_port) {
+       "Application port can't be empty"
+       error("ERROR101 - MISSING APP_PORT")
+   }
+   if(!p.pr_num) {
+       "PR Number can't be empty"
+       error("ERROR101 - MISSING PR_NUM")
+   }
 }
