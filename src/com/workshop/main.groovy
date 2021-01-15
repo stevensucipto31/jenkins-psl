@@ -17,6 +17,7 @@ def main(script) {
         stage('Pre Build Details') {
             println "Details Here..."
 	    	prebuildStage.details(pipeline)
+			prebuildStage.validation(pipeline)
         }
 
 		stage('Checkout & Test') {
