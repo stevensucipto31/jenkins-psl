@@ -22,6 +22,7 @@ def main(script) {
 
 		stage('Checkout & Test') {
 			println "Check,check, 1,2,3"
+			prebuildStage.checkoutBuildTest(pipeline)
 		}
 
 		stage('Build & Push Image to Registry') {
