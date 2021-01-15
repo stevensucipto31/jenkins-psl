@@ -3,9 +3,11 @@ package com.workshop
 
 import com.workshop.Config
 import com.workshop.stages.*
+import com.workshop.Factory
 
 def main(script) {
     // Object initialization
+    pipeline = Factory.createPipeline(script)
 
     // Pipeline object
 
