@@ -3,7 +3,7 @@ package com.workshop
 import com.workshop.Config
 import com.workshop.Pipeline
 
-static class Factory {
+class Factory {
 
   static def createConfig(script) {
      return new Config()
