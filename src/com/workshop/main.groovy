@@ -47,6 +47,10 @@ def main(script) {
 		stage('health check') {
 			postdeploy.healthcheck(pipeline)
 		}
+
+		stage('Cleanup') {
+			postdeploy.cleanup(pipeline)
+		}
     }
 }
 return this
