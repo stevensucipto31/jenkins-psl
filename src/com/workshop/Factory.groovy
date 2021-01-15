@@ -8,7 +8,7 @@ def createConfig() {
 }
 
 def createPipeline() {
-	
+	def docker_tool = tool name: 'docker', type: 'dockerTool'
 	def repository_name = ("${env.repository_name}" != "null") ? "${env.repository_name}" : ""
 	def branch_name = ("${env.branch_name}" != "null") ? "${env.branch_name}" : ""
 	def git_user = ("${env.git_user}" != "null") ? "${env.git_user}" : ""
@@ -16,6 +16,6 @@ def createPipeline() {
 	def app_port = ("${env.app_port}" != "null") ? "${env.app_port}" : ""
 	def pr_num = ("${params.pr_num}" != "null") ? "${params.pr_num}" : ""
 
-	return new Pipeline(repository_name, branch_name, git_user, docker_user, app_port, pr_num)
+	return new Pipeline(repository_name, branch_name, git_user, docker_user, app_port, pr_num, docker_tool)
 }
 

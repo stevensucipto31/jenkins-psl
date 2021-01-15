@@ -3,12 +3,10 @@ package com.workshop.stages
 import com.workshop.Pipeline
 import com.workshop.Config
 
-def dockerTool = tool name: 'docker', type: 'dockerTool'
-
 def deploy(Pipeline pipeline) {
    config = new Config()
  
-   withEnv(["PATH+DOCKER=${dockerTool}/bin"]){
+   withEnv(["PATH+DOCKER=${pipeline.docker_tool}/bin"]){
        println "Take Down previous Deployment"
        def response = sh script: "docker rm -f \$(docker ps -aq -f 'name=${pipeline.repository_name}') &> /dev/null", returnStatus: true
        if ("${response}" == "0") {
