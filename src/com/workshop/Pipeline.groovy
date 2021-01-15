@@ -21,12 +21,10 @@ class Pipeline {
     }
     
     def printDetails() {
-    	script {
 	println "Repository Name:" + repositoryName
 	println "Branch Name:" + branchName
 	println "Git Username:" + gitUsername
 	println "Docker Username:" + dockerUsername
 	println "Pull Request Number:" + pullRequestNumber
-	}
     }
 }

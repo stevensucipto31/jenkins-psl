@@ -7,6 +7,7 @@ import com.workshop.Factory
 
 def main(script) {
     // Object initialization
+    factory = new Factory()
     pipeline = Factory.createPipeline(script)
 
     // Pipeline object
