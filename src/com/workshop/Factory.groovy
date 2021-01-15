@@ -5,11 +5,12 @@ import com.workshop.Pipeline
 
 class Factory {
 
-  static def createConfig(script) {
+  def createConfig(script) {
      return new Config()
   }
 
-  static def createPipeline(script) {
+  def createPipeline(script) {
+    println script
     def repository_name = ("${script.env.repository_name}" != "null") ? "${script.env.repository_name}" : ""
     def branch_name = ("${script.env.branch_name}" != "null") ? "${script.env.branch_name}" : ""
     def git_user = ("${script.env.git_user}" != "null") ? "${script.env.git_user}" : ""
