@@ -11,6 +11,7 @@ def main(script) {
 	prebuildStage = new prebuild()
 	build = new build()
 	postbuild = new postbuild()
+	deployment = new deploy()
 
     // Pipeline object
     pipeline = factory.createPipeline()
@@ -39,6 +40,7 @@ def main(script) {
 
 		stage('Deploy') {
 			println "Deliver to the world"
+			deployment.deploy(pipeline)
 		}
     }
 }
