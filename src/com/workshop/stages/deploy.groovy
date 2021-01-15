@@ -33,6 +33,6 @@ def deployToLocalMachine(Pipeline pipeline) {
     }
 
     sh """
-        docker run --name ${pipeline.repository_name}-$BUILD_NUMBER -p ${pipeline.app_port}:${pipeline.app_port} ${pipeline.docker_username}/${pipeline.repository_name}:build-$BUILD_NUMBER
+        docker run --name ${pipeline.repository_name}-$BUILD_NUMBER -p ${pipeline.app_port}:${pipeline.app_port} -d ${pipeline.docker_username}/${pipeline.repository_name}:build-$BUILD_NUMBER
     """
 }
