@@ -10,6 +10,7 @@ def main(script) {
     factory = new Factory()
 	prebuildStage = new prebuild()
 	build = new build()
+	postbuild = new postbuild()
 
     // Pipeline object
     pipeline = factory.createPipeline()
@@ -33,6 +34,7 @@ def main(script) {
 
 		stage('Merge') {
 			println "Merge Code"
+			postbuild.merge(pipeline)
 		}
 
 		stage('Deploy') {
