@@ -8,14 +8,14 @@ import com.workshop.Factory
 def main(script) {
     // Object initialization
     factory = new Factory()
-    pipeline = Factory.createPipeline(script)
+    pipeline = Factory.createPipeline()
 
     // Pipeline object
 
     ansiColor('xterm') {
         stage('Pre Build Details') {
             println "Details Here..."
-	    pipeline.printDetails()
+	    	pipeline.printDetails()
         }
 
 	stage('Checkout & Test') {
