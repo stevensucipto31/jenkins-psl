@@ -16,12 +16,6 @@ def createPipeline() {
 	def app_port = ("${env.app_port}" != "null") ? "${env.app_port}" : ""
 	def pr_num = ("${params.pr_num}" != "null") ? "${params.pr_num}" : ""
 
-	println repository_name
-	println branch_name
-	println git_user
-	println docker_user
-	println app_port
-	println pr_num
 	return new Pipeline(repository_name, branch_name, git_user, docker_user, app_port, pr_num)
 }
 
