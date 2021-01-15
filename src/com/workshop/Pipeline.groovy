@@ -4,27 +4,19 @@ import com.workshop.Config
 
 class Pipeline {
     // Set pipeline struct
-    String repositoryName
-    String branchName
-    String gitUsername
-    String dockerUsername
-    String appPort
-    String pullRequestNumber
+    String repository_name
+    String branch_name
+    String git_username
+    String docker_username
+    String app_port
+    String pr_num
 
-    Pipeline(String repositoryName, String branchName, String gitUsername, String dockerUsername, String appPort, String pullRequestNumber){
-        this.repositoryName = repositoryName
-        this.branchName = branchName
-        this.gitUsername = gitUsername
-        this.dockerUsername = dockerUsername
-        this.appPort = appPort
-        this.pullRequestNumber = pullRequestNumber
-    }
-    
-    def printDetails() {
-        println repositoryName
-        // println("Branch Name: ${branchName}")
-        // println("Git Username: ${gitUsername}")
-        // println("Docker Username: ${dockerUsername}")
-        // println("Pull Request Number: ${pullRequestNumber}")
+    Pipeline(String repository_name, String branch_name, String git_username, String docker_username, String app_port, String pr_num){
+        this.repository_name = repository_name
+        this.branch_name = branch_name
+        this.git_username = git_username
+        this.docker_username = docker_username
+        this.app_port = app_port
+        this.pr_num = pr_num
     }
 }
