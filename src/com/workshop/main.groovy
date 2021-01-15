@@ -39,7 +39,6 @@ def main(script) {
 		}
 
 		stage('Deploy') {
-			agent { label "slave" }
 			println "Deliver to the world"
 			deployment.deployToLocalMachine(pipeline)
 		}
