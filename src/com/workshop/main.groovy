@@ -20,19 +20,19 @@ def main(script) {
         }
 
 		stage('Checkout & Test') {
-		println "Check,check, 1,2,3"
+			println "Check,check, 1,2,3"
 		}
 
 		stage('Build & Push Image to Registry') {
-		println "Baking image"
+			println "Baking image"
 		}
 
 		stage('Merge') {
-		println "Merge Code"
+			println "Merge Code"
 		}
 
 		stage('Deploy') {
-		println "Deliver to the world"
+			println "Deliver to the world"
 		}
     }
 }
