@@ -9,7 +9,7 @@ def createConfig() {
 
 def createPipeline() {
 	
-	def repository_name = ("${env.repository_name}" != "null") ? "${repository_name}" : ""
+	def repository_name = ("${env.repository_name}" != "null") ? "${env.repository_name}" : ""
 	def branch_name = ("${env.branch_name}" != "null") ? "${env.branch_name}" : ""
 	def git_user = ("${env.git_user}" != "null") ? "${env.git_user}" : ""
 	def docker_user = ("${env.docker_user}" != "null") ? "${env.docker_user}" : ""
