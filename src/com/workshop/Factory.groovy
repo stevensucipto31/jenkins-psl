@@ -8,6 +8,8 @@ def createConfig() {
 }
 
 def createPipeline() {
+	println env.repository_name
+	println env.branch_name
 	def repository_name = ("${repository_name}" != "null") ? "${repository_name}" : ""
 	def branch_name = ("${branch_name}" != "null") ? "${branch_name}" : ""
 	def git_user = ("${git_user}" != "null") ? "${git_user}" : ""

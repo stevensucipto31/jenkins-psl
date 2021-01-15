@@ -18,21 +18,21 @@ def main(script) {
 	    	pipeline.printDetails()
         }
 
-	stage('Checkout & Test') {
-	   println "Check,check, 1,2,3"
-	}
+		stage('Checkout & Test') {
+		println "Check,check, 1,2,3"
+		}
 
-	stage('Build & Push Image to Registry') {
-	   println "Baking image"
-	}
+		stage('Build & Push Image to Registry') {
+		println "Baking image"
+		}
 
-	stage('Merge') {
-	   println "Merge Code"
-	}
+		stage('Merge') {
+		println "Merge Code"
+		}
 
-	stage('Deploy') {
-	   println "Deliver to the world"
-	}
+		stage('Deploy') {
+		println "Deliver to the world"
+		}
     }
 }
 return this
