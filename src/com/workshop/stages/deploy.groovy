@@ -21,3 +21,18 @@ def deploy(Pipeline pipeline) {
        image.run("--name ${pipeline.repository_name}-$BUILD_NUMBER -p ${pipeline.app_port}:${pipeline.app_port}")
    }
 }
+
+def deployToLocalMachine(Pipeline pipeline) {
+    config = new Config()
+
+    def response = sh script: "docker rm -f \$(docker ps -aq -f 'name=${pipeline.repository_name}') &> /dev/null", returnStatus: true
+    if ("${response}" == "0") {
+        println("Successfuly removing old container")
+    } else {
+        println("Old version removed")
+    }
+
+    sh """
+        docker run --name ${pipeline.repository_name}-$BUILD_NUMBER -p ${pipeline.app_port}:${pipeline.app_port} ${pipeline.docker_username}/${pipeline.repository_name}:build-$BUILD_NUMBER
+    """
+}
