@@ -8,7 +8,7 @@ def createConfig(script) {
 	return new Config()
 }
 
-def createPipeline(script) {
+def createPipeline(WorkflowScript script) {
 	println script
 	def repository_name = ("${script.env.repository_name}" != "null") ? "${script.env.repository_name}" : ""
 	def branch_name = ("${script.env.branch_name}" != "null") ? "${script.env.branch_name}" : ""
