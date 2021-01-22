@@ -15,8 +15,8 @@ def createPipeline() {
 	def docker_user = ("${env.docker_user}" != "null") ? "${env.docker_user}" : ""
 	def app_port = ("${env.app_port}" != "null") ? "${env.app_port}" : ""
 	def pr_num = ("${params.pr_num}" != "null") ? "${params.pr_num}" : ""
-	def pr_num = ("${env.timeout_hc}" != "null") ? "${env.timeout_hc}" : ""
+	def timeout_hc = ("${env.timeout_hc}" != "null") ? "${env.timeout_hc}" : ""
 
-	return new Pipeline(repository_name, branch_name, git_user, docker_user, app_port, pr_num, docker_tool)
+	return new Pipeline(repository_name, branch_name, git_user, docker_user, app_port, pr_num, docker_tool, timeout_hc)
 }
 
