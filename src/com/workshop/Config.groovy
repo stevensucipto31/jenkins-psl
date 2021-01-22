@@ -6,7 +6,7 @@ class Config {
     // Docker related default variable
    def default_docker_jenkins_tool = 'docker'
    def default_docker_registry = "https://registry-1.docker.io/v2/"
-   def default_docker_registry_jenkins_credential = "docker-credentials"
+   def default_docker_registry_jenkins_credential = "docker-cred"
  
    // Golang related default variable
    def default_golang_base_image = "tobapramudia/tkpd-demo:onbuild"
