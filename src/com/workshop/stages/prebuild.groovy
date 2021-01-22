@@ -10,7 +10,7 @@ def details(Pipeline p) {
    println("Branch Name : ${p.branch_name}")
    println("Application Port : ${p.app_port}")
    println("")
-   println("Testing this PR : #${p.pr_num} - https://github.com/${p.git_username}/${p.repository_name}/pull/${p.pr_num}")
+   println("Testing this PR : #${p.pr_num} - https://github.com/${p.git_user}/${p.repository_name}/pull/${p.pr_num}")
    println("Merging to branch : ${p.branch_name}")
 }
 
@@ -39,7 +39,7 @@ def checkoutBuildTest(Pipeline p) {
    withCredentials([usernamePassword(credentialsId: 'github-personal', passwordVariable: 'git_token', usernameVariable: 'git_username')]) {
        println "============\u001b[44mCommencing PR Checkout\u001b[0m============"
        println "\u001b[36mChecking out from : \u001b[0mpull/${p.pr_num}/head:pr/${p.pr_num}..."
-       git branch: "${p.branch_name}", url: "https://github.com/${p.git_username}/${p.repository_name}.git"
+       git branch: "${p.branch_name}", url: "https://github.com/${p.git_user}/${p.repository_name}.git"
  
        sh "git config --global user.name '${git_username}'"
        sh "git config --global user.email '${git_username}@example.com'"
