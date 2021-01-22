@@ -10,7 +10,7 @@ def details(Pipeline p) {
    println("Branch Name : ${p.branch_name}")
    println("Application Port : ${p.app_port}")
    println("")
-   println("Testing this PR : #${p.pr_num} - https://github.com/${p.git_username}/${p.repository_name}/pull/${p.pr_num}")
+   println("Testing this PR : #${p.pr_num} - https://github.com/${p.git_user}/${p.repository_name}/pull/${p.pr_num}")
    println("Merging to branch : ${p.branch_name}")
 }
 
