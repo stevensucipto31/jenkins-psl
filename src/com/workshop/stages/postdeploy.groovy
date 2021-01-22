@@ -21,7 +21,7 @@ def healthcheck(Pipeline p) {
 
 def cleanup(Pipeline pipeline) {
    withEnv(["PATH+DOCKER=${pipeline.docker_tool}/bin"]){
-       def output = sh script: "docker rmi \$(docker images | grep -Ev 'latest|${BUILD_NUMBER}' | awk '/${pipeline.docker_username}\\/${pipeline.repository_name}/ {print \$1\":\"\$2}')", returnStdout: true
+       def output = sh script: "docker rmi \$(docker images | grep -Ev 'latest|${BUILD_NUMBER}' | awk '/${pipeline.docker_user}\\/${pipeline.repository_name}/ {print \$1\":\"\$2}')", returnStdout: true
        println "Remove old Image"
        println output
    }
